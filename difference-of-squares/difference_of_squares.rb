@@ -15,7 +15,7 @@ class Squares
   end
 
   def sum_of_squares 
-    squares = *(1..@num).map{ |digit| digit ** 2 }
+    squares = (1..@num).to_a.map{ |digit| digit ** 2 }
     return squares.sum
   end
 
