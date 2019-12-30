@@ -1,16 +1,7 @@
-=begin
-Write your code for the 'Sieve' exercise in this file. Make the tests in
-`sieve_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/sieve` directory.
-=end
-
 class Sieve
 
   def initialize(max) 
     @max_number = max
-    @prime_numbers = [2]
     @composite_numbers = []
     @sieve_hash = numeric_hash
   end
@@ -26,7 +17,6 @@ class Sieve
   def sieve 
    set_primes
     @sieve_hash.map do |number, is_prime| 
-      # break if number > @max_number
       number if is_prime
     end.compact
   end
