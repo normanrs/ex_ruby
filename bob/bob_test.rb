@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'minitest/pride'
 require_relative 'bob'
 
 # Common test data version: 1.4.0 ca79943
