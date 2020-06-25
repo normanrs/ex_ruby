@@ -12,8 +12,12 @@ def end_s(number)
   's' if number > 1
 end
 
+def onehe(number)
+  number > 1 ? 'One' : 'Corey'
+end
+
 def mainstring(number)
-  "#{number_words[number]} little monkey#{end_s(number)} jumping on the bed,\nOne fell off and bumped his head,\nMama called the doctor and the doctor said,"
+  "#{number_words[number]} little monkey#{end_s(number)} jumping on the bed,\n#{onehe(number)} fell off and bumped his head,\nMama called the doctor and the doctor said,"
 end
 
 10.times do |index|
