@@ -1,7 +1,6 @@
 require 'csv'
 
 class Shortener
-
   def urls
     CSV.read('urls.csv').flatten
   end
@@ -32,9 +31,4 @@ class Shortener
     end
     result
   end
-
 end
-
-# all combinations of alphanumeric characters of a certain length
-# determine how many codes you need
-# get array of codes
