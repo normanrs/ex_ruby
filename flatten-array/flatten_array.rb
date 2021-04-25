@@ -1,5 +1,7 @@
-class FlattenArray 
+# frozen_string_literal: true
+
+class FlattenArray
   def self.flatten(array_in)
-    return array_in.flatten.compact
+    array_in.flatten.compact
   end
 end

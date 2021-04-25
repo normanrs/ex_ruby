@@ -1,9 +1,10 @@
-class Complement 
+# frozen_string_literal: true
 
+class Complement
   def self.of_dna(sequence)
-    replacements = {"G" => "C", "C" => "G", "T" => "A", "A" => "U", "X" => ''}
+    replacements = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U', 'X' => '' }
     letters = sequence.gsub(/[^ACGT]/, 'X').chars
-    transcribed = letters.map do |letter| 
+    transcribed = letters.map do |letter|
       replacements[letter]
     end
     transcribed.join

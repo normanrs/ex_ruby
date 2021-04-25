@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'robot_name'
 
 class RobotTest < Minitest::Test
-  NAME_REGEXP = /^[A-Z]{2}\d{3}$/
+  NAME_REGEXP = /^[A-Z]{2}\d{3}$/.freeze
 
   def setup
     Robot.forget
@@ -82,9 +84,9 @@ class RobotTest < Minitest::Test
       seen_names[robot.name] += 1
       robots << robot
     end
-    timeout_message = "Timed out trying to generate all possible robots"
+    timeout_message = 'Timed out trying to generate all possible robots'
     assert_equal all_names_count, robots.size, timeout_message
-    assert seen_names.values.all? { |count| count == 1 }, "Some names used more than once"
+    assert seen_names.values.all? { |count| count == 1 }, 'Some names used more than once'
     assert seen_names.keys.all? { |name| name.match(NAME_REGEXP) }, "Not all names match #{NAME_REGEXP}"
   end
 end

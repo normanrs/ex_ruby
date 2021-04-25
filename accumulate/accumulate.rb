@@ -1,13 +1,13 @@
-class Array
+# frozen_string_literal: true
 
+class Array
   def accumulate
-    if self.empty?
+    if empty?
       self
     else
-      self.map do |elem|
+      map do |elem|
         yield(elem)
       end
     end
-  end 
-  
+  end
 end

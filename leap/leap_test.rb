@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'leap'
 
 # Common test data version: 1.4.0 3134d31
 class Date
   def leap?
-    raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
+    raise "Implement this yourself instead of using Ruby's implementation."
   end
 
   alias gregorian_leap? leap?

@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 class Tournament
   class << self
     def tally(input)
       results = Hash.new { |hash, key| hash[key] = Team.new(key) }
       normalize_input(input).each do |teamA, teamB, outcome|
         case outcome
-        when "win"
+        when 'win'
           results[teamA].add_win
           results[teamB].add_loss
-        when "draw"
+        when 'draw'
           results[teamA].add_draw
           results[teamB].add_draw
-        when "loss"
+        when 'loss'
           results[teamA].add_loss
           results[teamB].add_win
         end
@@ -20,8 +22,8 @@ class Tournament
 
     private
 
-    HEADER = "Team                           | MP |  W |  D |  L |  P\n".freeze
-    DIVIDER = ' | '.freeze
+    HEADER = "Team                           | MP |  W |  D |  L |  P\n"
+    DIVIDER = ' | '
 
     def format_results(results)
       teams = results.values.sort_by { |team| [-team.points, team.name] }
@@ -40,7 +42,7 @@ class Tournament
     end
 
     def normalize_input(input)
-      input.split("\n").map { |row| row.split(";") }
+      input.split("\n").map { |row| row.split(';') }
     end
   end
 
