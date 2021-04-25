@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'shortener.rb'
 
 class ShortenerTest < Minitest::Test
-
   def test_item_creation
     thing = Shortener.new
     assert_instance_of Shortener, thing
@@ -22,5 +21,4 @@ class ShortenerTest < Minitest::Test
     assert site_list.values.count == site_list.values.uniq.count
     assert_equal site_list.count, urls.count
   end
-
 end
