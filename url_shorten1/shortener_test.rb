@@ -17,8 +17,7 @@ class ShortenerTest < Minitest::Test
     shortener = Shortener.new
     urls = shortener.urls
     site_list = shortener.shortened_urls
-    refute_empty site_list
-    assert site_list.values.count == site_list.values.uniq.count
     assert_equal site_list.count, urls.count
+    assert site_list.values.first.include?('http://www.nurl/')
   end
 end

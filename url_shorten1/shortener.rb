@@ -14,7 +14,7 @@ class Shortener
     result = {}
     codes = permutations(digits_needed)
     urls.map do |url|
-      result[url] = codes.pop
+      result[url] = "http://www.nurl/#{codes.pop}"
     end
     result
   end
