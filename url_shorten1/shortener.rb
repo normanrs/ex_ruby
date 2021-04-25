@@ -10,7 +10,7 @@ class Shortener
     CSV.read('urls.csv').flatten
   end
 
-  def write_shortened
+  def shortened_urls
     result = {}
     codes = permutations(digits_needed)
     urls.map do |url|
