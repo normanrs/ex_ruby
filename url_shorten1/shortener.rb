@@ -30,6 +30,6 @@ class Shortener
   end
 
   def permutations(num)
-    ALPHANUM.repeated_permutation(num + 1).map(&:join)
+    ALPHANUM.repeated_permutation(num + 1).map(&:join).shuffle
   end
 end
