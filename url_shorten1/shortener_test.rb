@@ -13,6 +13,12 @@ class ShortenerTest < Minitest::Test
     refute_empty url_list
   end
 
+  def test_permutations
+    shortener = Shortener.new
+    perms3 = shortener.permutations(3)
+    assert_equal 1679616, perms3.count
+  end
+
   def test_add_shortened_urls
     shortener = Shortener.new
     urls = shortener.urls
